@@ -14,8 +14,7 @@
             "jsx": true
         },
         "ecmaVersion": "latest",
-        "sourceType": "module",
-        "parser": "@babel/eslint-parser"
+        "sourceType": "module"
     },
     "plugins": [
         "react"

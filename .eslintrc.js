@@ -25,9 +25,9 @@ module.exports = {
   env: {
     browser: true
   },
-  extends: ["eslint:recommended", "plugin:react/recommended"],
   extends: ["eslint:recommended", "plugin:prettier/recommended"],
   rules: {
     "no-console": "off"
-  }
+  },
+  parser: "@babel/eslint-parser"
 };
