@@ -20,7 +20,9 @@ module.exports = {
   extends: ["eslint:recommended", "prettier"],
   parserOptions: {
     ecmaVersion: 6,
-    sourceType: "module"
+    sourceType: "module",
+    requireConfigFile: false,
+    parser: "@babel/eslint-parser"
   },
   env: {
     browser: true
@@ -29,5 +31,4 @@ module.exports = {
   rules: {
     "no-console": "off"
   },
-  parser: "@babel/eslint-parser"
 };
