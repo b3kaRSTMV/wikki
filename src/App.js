@@ -1,9 +1,12 @@
+import { useSelector, useDispatch } from "react-redux";
+import { test } from "./reduxToolkit/toolkitReducer";
 function App() {
+  const testShowCount = useSelector((state) => state.toolkit.count);
+  const dispatch = useDispatch();
   return (
     <div>
-      <div>
-        <h1>Hello world</h1>
-      </div>
+      <div>{testShowCount}</div>
+      <button onClick={() => dispatch(test())}>click here</button>
     </div>
   );
 }
