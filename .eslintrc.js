@@ -1,9 +1,10 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
+    es6: true,
+    node: true
   },
-  extends: ["plugin:react/recommended", "airbnb"],
   parserOptions: {
     ecmaFeatures: {
       jsx: true
@@ -12,23 +13,8 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["react"],
-  rules: {},
-  env: {
-    es6: true,
-    node: true
-  },
-  extends: ["eslint:recommended", "prettier"],
-  parserOptions: {
-    ecmaVersion: 6,
-    sourceType: "module",
-    requireConfigFile: false,
-    parser: "@babel/eslint-parser"
-  },
-  env: {
-    browser: true
-  },
-  extends: ["eslint:recommended", "plugin:prettier/recommended"],
+  extends: ["eslint:recommended", "plugin:prettier/recommended", "eslint:recommended", "prettier", "plugin:react/recommended", "airbnb"],
   rules: {
     "no-console": "off"
-  },
+  }
 };
