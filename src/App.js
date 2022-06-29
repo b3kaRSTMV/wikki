@@ -1,12 +1,10 @@
-import { useSelector, useDispatch } from "react-redux";
-import { test } from "./reduxToolkit/toolkitReducer";
+import { Routes, Route } from "react-router-dom";
 function App() {
-  const testShowCount = useSelector((state) => state.toolkit.count);
-  const dispatch = useDispatch();
   return (
     <div>
-      <div>{testShowCount}</div>
-      <button onClick={() => dispatch(test())}>click here</button>
+      <Routes>
+        <Route path="/"></Route>
+      </Routes>
     </div>
   );
 }
