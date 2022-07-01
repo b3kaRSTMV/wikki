@@ -1,10 +1,10 @@
 import { Routes, Route } from "react-router-dom";
-import Header from "./components/header/Header";
+import MainPage from "./pages/MainPage";
 function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Header />}></Route>
+        <Route path="/" element={<MainPage />}></Route>
       </Routes>
     </>
   );

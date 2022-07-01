@@ -6,19 +6,20 @@ export default function Header() {
   return (
     <div className="container">
       <div className={css.wrapper}>
-        <img src={logo} alt="brb"></img>
+        <img src={logo} alt="something went wrong"></img>
         <div className={css.a_container}>
-          <a href="#" className={css.a}>
+          <a href="#" className={css.header_link}>
             Features
           </a>
-          <a href="#" className={css.a}>
+          <a href="#" className={css.header_link}>
             Sign Up
           </a>
-          <a href="#" className={css.a_with_background}>
+          <a href="#" className={css.link_with_background}>
             Sign In
           </a>
         </div>
       </div>
+      <hr className={css.hr}></hr>
     </div>
   );
 }
