@@ -1,17 +1,13 @@
-import { useSelector, useDispatch } from "react-redux";
-import { test } from "./reduxToolkit/toolkitReducer";
-import { useTranslation } from "react-i18next";
+import { Routes, Route } from "react-router-dom";
+import MainPage from "./pages/MainPage";
 
 function App() {
-  const { t } = useTranslation();
-  const testShowCount = useSelector((state) => state.toolkit.count);
-  const dispatch = useDispatch();
   return (
-    <div>
-      <div>{testShowCount}</div>
-      <button onClick={() => dispatch(test())}>click here</button>
-      <h1>{t("Welcome")}</h1>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<MainPage />}></Route>
+      </Routes>
+    </>
   );
 }
 
