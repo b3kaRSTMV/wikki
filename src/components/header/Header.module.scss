@@ -1,42 +1,132 @@
-* {
-    font-family: 'Avenir Next LT Pro', sans-serif;
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
 }
 
-
-.header_link {
-    text-decoration: none;
-    color: rgb(71, 71, 71);
-    margin-left: 25px;
-    font-size: 18px;
-    font-weight: 400;
+.header:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 2;
 }
 
-a:hover {
-    color: #FF8C00;
+.logo {
+    position: relative;
+    z-index: 3;
 }
 
-.link_with_background {
-    text-decoration: none;
-    color: black;
-    margin-left: 20px;
-    font-size: 17px;
-    font-weight: 500;
-    background-color: #DCDCDC;
-    padding: 10px;
-    border-radius: 3px;
-}
-
-.wrapper {
+.header_body {
+    position: relative;
     width: 80%;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    margin: 20px auto;
+    height: 80px;
     align-items: center;
+}
+
+li {
+    list-style: none;
+    margin-left: 20px;
 }
 
 .hr {
     height: 1px;
     width: 76%;
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(163, 162, 162);
     border: none;
+}
+.header_list {
+    display: flex;
+    position: relative;
+    z-index: 3;
+}
+
+.header_link {
+    color: rgb(36, 36, 36);
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.header_link_with_background {
+    color: rgb(36, 36, 36);
+    font-size: 18px;
+    text-decoration: none;
+    background-color: #DCDCDC;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.header_link:hover {
+    color: rgb(231, 139, 0);
+}
+
+.header_link_with_background:hover {
+    color: rgb(231, 139, 0);
+}
+
+@media(max-width:767px) {
+    .header_burger {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 20px;
+        position: relative;
+        z-index: 3;
+    }
+
+    .header_burger span {
+        position: absolute;
+        background-color: black;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        top: 9px;
+    }
+
+    .header_burger:before,
+    .header_burger:after {
+        content: "";
+        background-color: black;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+    }
+
+    .header_burger:before {
+        top: 0;
+    }
+
+    .header_burger::after {
+        bottom: 0;
+    }
+
+    .header_menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        padding: 70px 10px 20px 10px;
+    }
+
+    .header_list {
+        display: block;
+    }
+
+    li {
+        margin: 0px 0px 20px 0px;
+    }
+
+    .header_link_with_background {
+        padding-right: 85%;
+    }
 }

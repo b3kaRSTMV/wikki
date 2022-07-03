@@ -38,6 +38,6 @@
 
 @media(max-width: 512px) {
   .container {
-    max-width: 100%;
+    max-width: none;
   }
 }
