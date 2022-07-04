@@ -19,14 +19,14 @@ export default function Header() {
           <nav className={css.header_menu}>
             <ul className={css.header_list}>
               <li>
-                <Link to="/" className={css.header_link}>
+                <a href="#" className={css.header_link}>
                   Features
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/" className={css.header_link}>
+                <a href="#" className={css.header_link}>
                   Sign Up
-                </Link>
+                </a>
               </li>
               <li>
                 <Link to="/" className={css.header_link_with_background}>
@@ -42,14 +42,14 @@ export default function Header() {
         <nav className={css.header_menu_active}>
           <ul className={css.header_list_active}>
             <li>
-              <Link to="/" className={css.header_link}>
+              <a href="#" className={css.header_link}>
                 Features
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="/" className={css.header_link}>
+              <a href="#" className={css.header_link}>
                 Sign Up
-              </Link>
+              </a>
             </li>
             <li>
               <Link to="/" className={css.header_link_with_background}>
