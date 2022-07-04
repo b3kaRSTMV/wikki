@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../images/logo.png";
 import css from "./Header.module.scss";
 import { useState } from "react";
 export default function Header() {
@@ -10,10 +9,12 @@ export default function Header() {
       <div className={css.header}>
         <div className={css.header_body}>
           <Link to="/" className={css.logo}>
-            <img src={logo} alt="Logo" />
+            <img src="/images/logo.png" alt="Logo" />
           </Link>
-          <div className={css.header_burger} onClick={() => setActive(!active)}>
-            <span></span>
+          <div className={css.burger_border}>
+            <div className={css.header_burger} onClick={() => setActive(!active)}>
+              <span></span>
+            </div>
           </div>
           <nav className={css.header_menu}>
             <ul className={css.header_list}>

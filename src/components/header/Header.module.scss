@@ -4,7 +4,6 @@
     top: 0;
     left: 0;
     z-index: 50;
-    font-family: 'Avenir Next LT Pro', sans-serif;
 }
 
 .header:before {
@@ -82,25 +81,37 @@ li {
     .header_burger {
         display: block;
         position: relative;
-        width: 30px;
-        height: 20px;
-        position: relative;
+        width: 23px;
+        height: 14px;
         z-index: 3;
+        margin: 20% auto;
+    }
+
+    .burger_border {
+        margin-right: 3%;
+        border: 1px solid rgb(204, 204, 204);
+        border-radius: 5px;
+        width: 45px;
+        height: 33px;
+    }
+
+    .burger_border:hover {
+        background-color: rgb(204, 204, 204);
     }
 
     .header_burger span {
         position: absolute;
-        background-color: black;
+        background-color: rgb(126, 126, 126);
         left: 0;
         width: 100%;
         height: 2px;
-        top: 9px;
+        top: 6px;
     }
 
     .header_burger:before,
     .header_burger:after {
         content: "";
-        background-color: black;
+        background-color: rgb(126, 126, 126);
         position: absolute;
         width: 100%;
         height: 2px;
@@ -128,7 +139,7 @@ li {
     }
 
     .header_list_active {
-        width: 80%;
+        width: 100%;
         margin: 8% auto;
         display: block;
     }
@@ -137,16 +148,25 @@ li {
         margin: 7% 0px 20px 0px;
     }
 
-    .header_link{
+    .header_link {
         margin-left: 1%;
     }
 
     .header_link_with_background {
-        padding-right: 85%;
+        padding-right: 92%;
+
     }
 
     .header_menu {
         display: none;
+    }
+
+    .hr {
+        width: 100%;
+    }
+
+    .header_body {
+        width: 100%;
     }
 
 }
