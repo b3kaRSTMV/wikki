@@ -1,3 +1,5 @@
+@import "../../App.css";
+
 .footer{
     padding: 30px 70px 60px;
     background-color: #404041;
@@ -5,8 +7,6 @@
             display: flex;
 	        justify-content: space-between;
             align-items: center;
-            width: 80%;
-            margin: 0 auto;
             .footer__items_links{
                 display: flex;
 	            justify-content: space-between;
@@ -26,7 +26,7 @@
 	                            text-transform: capitalize;
 	                            color: #ffffff;
 	                            text-decoration: none;
-	                            font-weight: 400;
+	                            font-weight: 500;
 	                            color: #c5dae6;
 	                            display: block;
 	                            margin-top: 10px;
@@ -45,7 +45,7 @@
 
                 img{
                     width: 50%;
-                    margin-left: 9%;
+                    margin-left: 15%;
                     margin-bottom: 2%;
                 }
                 p{
@@ -91,7 +91,8 @@
     .footer__logo{
         img{
             width: 100% !important;  
-            margin-right: 10px !important;
+            margin-right: 10% !important;
+            margin-bottom: 4% !important;
         }
     }
     
@@ -100,7 +101,7 @@
     .footer__logo{
         img{
             width: 100% !important;  
-            margin-right: 5% !important;
+            margin-right: 6% !important;
         }
     }
     
