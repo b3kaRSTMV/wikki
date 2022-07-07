@@ -1,22 +1,18 @@
 import React from "react";
 import css from "./Jumbotron.module.scss";
+import { useTranslation } from "react-i18next";
+import "../../i18next";
 
 const Jumbotron = () => {
+  const { t } = useTranslation();
   return (
     <div className={css.wrapper}>
       <div className="container">
         <div className={css.content_wrapper}>
           <div className={css.text_container}>
-            <p className={css.title}>
-              Beautiful Wikis
-              <br />
-              for Teams
-            </p>
-            <p className={css.main_text}>
-              Wikis don’t have to be ugly, complex and hard to manage. Welcome to the future of the
-              Wiki.
-            </p>
-            <button className={css.btn}>GET STARTED - FREE FOREEVER!</button>
+            <p className={css.title}>{t("jumbotron.title")}</p>
+            <p className={css.main_text}>{t("jumbotron.main_text")}</p>
+            <button className={css.btn}>{t("jumbotron.btn_text")}</button>
           </div>
           <div className={css.img_container}>
             <img
