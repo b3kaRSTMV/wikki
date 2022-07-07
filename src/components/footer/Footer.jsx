@@ -5,11 +5,9 @@ import { useTranslation } from "react-i18next";
 function Footer() {
   const { t } = useTranslation();
   return (
-    <>
-      <footer>
-        <div className={css.container}>
-          <div className={css.footer__items}>
-            <nav className={css.footer__items_links}>
+    <div className={css.footer}>
+      <div className={css.footer__items}>
+        <nav className={css.footer__items_links}>
               <div>
                 <h4>{t("Products")}</h4>
                 <Link to="/features">{t("Features")}</Link>
@@ -36,8 +34,6 @@ function Footer() {
             </div>
           </div>
         </div>
-      </footer>
-    </>
   );
 }
 export default Footer;

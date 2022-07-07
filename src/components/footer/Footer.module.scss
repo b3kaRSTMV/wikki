@@ -1,10 +1,8 @@
-footer{
+.footer{
     padding: 10px 70px;
     background-color: #404041;
-
-    .container{
-        width: 80%;
-        margin: 0 auto;
+    width: 80%;
+    margin: 0 auto; 
         .footer__items{
             display: flex;
 	        justify-content: space-between;
@@ -58,8 +56,6 @@ footer{
                 }
             }
         }
-        
-    }
 }
 @media(max-width: 1024px){
     .footer__items_links{
