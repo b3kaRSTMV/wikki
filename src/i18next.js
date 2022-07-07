@@ -11,7 +11,6 @@ i18next
     supportedLngs: ["en", "ru"],
     fallbackLng: "en",
     debug: false,
-    // Options for language detector
     detection: {
       order: ["path", "cookie", "htmlTag"],
       caches: ["cookie"]
@@ -20,3 +19,5 @@ i18next
       loadPath: "/shared/locales/{{lng}}/translation.json"
     }
   });
+
+export default i18next;

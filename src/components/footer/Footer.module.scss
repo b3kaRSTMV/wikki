@@ -1,12 +1,12 @@
 .footer{
-    padding: 10px 70px;
+    padding: 30px 70px 60px;
     background-color: #404041;
-    width: 80%;
-    margin: 0 auto; 
         .footer__items{
             display: flex;
 	        justify-content: space-between;
             align-items: center;
+            width: 80%;
+            margin: 0 auto;
             .footer__items_links{
                 display: flex;
 	            justify-content: space-between;
@@ -26,7 +26,7 @@
 	                            text-transform: capitalize;
 	                            color: #ffffff;
 	                            text-decoration: none;
-	                            font-weight: 300;
+	                            font-weight: 400;
 	                            color: #c5dae6;
 	                            display: block;
 	                            margin-top: 10px;
@@ -45,7 +45,8 @@
 
                 img{
                     width: 50%;
-                    margin-right: 5%;
+                    margin-left: 9%;
+                    margin-bottom: 2%;
                 }
                 p{
                     color: #c5dae6;
@@ -63,28 +64,26 @@
         padding-bottom: 20px;
 	}
     .footer__logo{
-        margin-bottom: 155px !important;
+        
         img{
-            margin-right: 30% !important;
+            margin-right: 15% !important;
+            margin-bottom: 10px;
         }
     }  
 }
 @media(max-width: 768px){
-	.container{
-		padding: 20px;
-	}
   .footer__items{
+    width: 100%;
     flex-direction: column;
-    width: 100%
     }
 	.footer__items_links{
-		flex-wrap: wrap;
-
+       flex-wrap: wrap;
 	}
 	.footer__logo{
 		margin-top: 40px;
         img{
-            margin-right: 48% !important;
+            margin-right: 36% !important;
+            margin-bottom: 2%;
         }
     }    
 }
@@ -93,6 +92,15 @@
         img{
             width: 100% !important;  
             margin-right: 10px !important;
+        }
+    }
+    
+}
+@media(max-width: 320px){
+    .footer__logo{
+        img{
+            width: 100% !important;  
+            margin-right: 5% !important;
         }
     }
     
