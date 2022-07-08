@@ -1,4 +1,3 @@
-import React from "react";
 import css from "./Jumbotron.module.scss";
 import { useTranslation } from "react-i18next";
 import "../../i18next";
@@ -17,7 +16,7 @@ const Jumbotron = () => {
           <div className={css.img_container}>
             <img
               className={`${css.box} ${css.bounce_3}`}
-              src="https://d1zc83yjnlch7e.cloudfront.net/assets/showcase-51315a7025a7f372e5a4ec159874c77fc029074c577815860a6fcfb4ba3dea91.png"
+              src="/images/jumbotrons_img.png"
               alt="image"
             />
           </div>

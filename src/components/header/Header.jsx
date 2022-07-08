@@ -1,9 +1,9 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import css from "./Header.module.scss";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import "../../i18next";
+
 export default function Header() {
   const { t } = useTranslation();
   const [active, setActive] = useState(false);
