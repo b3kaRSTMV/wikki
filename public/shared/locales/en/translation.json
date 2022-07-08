@@ -1,3 +1,12 @@
 {
-    "Welcome":"Welcome"
+    "jumbotron": {
+        "title": "Beautiful Wikis for Teams",
+        "main_text": "Wikis don’t have to be ugly, complex and hard to manage. Welcome to the future of the Wiki.",
+        "btn_text": "GET STARTED - FREE FOREEVER!"
+    },
+    "header": {
+        "features": "Features",
+        "SignUp": "Sign Up",
+        "SignIn": "Sign In"
+    }
 }
