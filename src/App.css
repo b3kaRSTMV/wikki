@@ -1,10 +1,10 @@
-@import url('http://fonts.cdnfonts.com/css/avenir-next-lt-pro');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Avenir Next LT Pro', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .container {
@@ -19,11 +19,7 @@
   }
 }
 
-@media (max-width: 1140px) {
-  .container {
-    max-width: 840px;
-  }
-}
+
 
 @media (max-width: 900px) {
   .container {
