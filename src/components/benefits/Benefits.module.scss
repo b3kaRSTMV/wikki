@@ -1,0 +1,66 @@
+.wrapper {
+    width: 100%;
+    margin-top: 8%;
+}
+
+.card_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.card_main_text {
+    width: 53vh;
+    color: rgb(170, 170, 170);
+
+}
+
+.card_title {
+    text-align: end;
+}
+
+.img {
+    margin: 0 25px;
+}
+
+.title {
+    text-align: center;
+}
+
+.main_text {
+    text-align: center;
+    width: 65%;
+    margin: 15px auto;
+    color: rgb(170, 170, 170);
+}
+
+.card_main_text_container_reverse{
+    width: 53vh;
+    color: rgb(170, 170, 170);
+    text-align: end;
+}
+
+.card_main_text_reverse{
+
+}
+
+.title_container{
+    width: 300px;
+}
+
+.main_text_container{
+    width: 300px;
+}
+
+.card_main_text_container_reverse{
+    width: 300px;
+}
+
+.card_title_container_reverse{
+    width: 300px;
+}
+
+.card_main_text_reverse{
+    width: 50vh;
+}
