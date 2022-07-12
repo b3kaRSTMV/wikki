@@ -1,4 +1,14 @@
 {
+    "header": {
+        "features": "Features",
+        "SignUp": "Sign Up",
+        "SignIn": "Sign In"
+    },
+    "jumbotron": {
+        "title": "Beautiful Wikis for Teams",
+        "main_text": "Wikis don’t have to be ugly, complex and hard to manage. Welcome to the future of the Wiki.",
+        "btn_text": "GET STARTED - FREE FOREEVER!"
+    },
     "footer":{
         "Products": "Products",
         "Features": "Features",
@@ -14,14 +24,15 @@
         "at":"at",
         "Oozou":"Oozou"
     },
-    "jumbotron": {
-        "title": "Beautiful Wikis for Teams",
-        "main_text": "Wikis don’t have to be ugly, complex and hard to manage. Welcome to the future of the Wiki.",
-        "btn_text": "GET STARTED - FREE FOREEVER!"
-    },
-    "header": {
-        "features": "Features",
-        "SignUp": "Sign Up",
-        "SignIn": "Sign In"
+    "loginForm":{
+        "Login with facebook":"Login with facebook",
+        "sign in with github":"sign in with github",
+        "sign in with google":"sign in with google",
+        "OR":"OR",
+        "Email":"Email",
+        "Password":"Password",
+        "Remember me":"Remember me",
+        "Forgot a password?":"Forgot a password?",
+        "SIGN IN":"SIGN IN"
     }
 }
