@@ -4,8 +4,8 @@ import App from "./App";
 import { store } from "./reduxToolkit";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
-import "./i18next";
 import { BrowserRouter } from "react-router-dom";
+import "./i18next";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
