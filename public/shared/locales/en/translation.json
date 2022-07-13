@@ -39,9 +39,9 @@
         "OR":"OR",
         "Email":"Email",
         "Password":"Password",
-        "Remember me":"Remember me",
+        "Remember_me":"Remember me",
         "password":"Forgot a password?",
-        "SIGN IN":"SIGN IN"
+        "SIGN_IN":"SIGN IN"
     }
     
 }

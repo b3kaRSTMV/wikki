@@ -38,7 +38,7 @@ function LoginPage() {
           <div class={css.login__submit}>
             <div>
               <input type="checkbox" />
-              <span className={css.login__text}>{t("loginPage.Remember me")}</span>
+              <span className={css.login__text}>{t("loginPage.Remember_me")}</span>
             </div>
             <Link to="/" className={css.login__text}>
               {t("loginPage.password?")}
@@ -46,7 +46,7 @@ function LoginPage() {
           </div>
           <div class={css.control}>
             <a href="" className={css.control__sign}>
-              {t("loginPage.SIGN IN")}
+              {t("loginPage.SIGN_IN")}
             </a>
           </div>
         </form>
