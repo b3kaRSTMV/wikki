@@ -1,15 +1,20 @@
 {
-    "header": {
+    "header": 
+        {
         "features": "Features",
         "SignUp": "Sign Up",
         "SignIn": "Sign In"
-    },
-    "jumbotron": {
+        }
+    ,
+    "jumbotron": 
+        {
         "title": "Beautiful Wikis for Teams",
         "main_text": "Wikis don’t have to be ugly, complex and hard to manage. Welcome to the future of the Wiki.",
         "btn_text": "GET STARTED - FREE FOREEVER!"
-    },
-    "footer":{
+    }
+    ,
+    "footer":
+        {
         "Products": "Products",
         "Features": "Features",
         "Pricing": "Pricing",
@@ -20,19 +25,23 @@
         "Terms":"Terms",
         "Social":"Social",
         "Legal":"Legal",
-        "Created by awesome people":"Created by awesome people",
+        "footer_text":"Created by awesome people",
         "at":"at",
         "Oozou":"Oozou"
-    },
-    "loginForm":{
-        "Login with facebook":"Login with facebook",
-        "sign in with github":"sign in with github",
-        "sign in with google":"sign in with google",
+    }
+    ,
+    "loginPage":
+    
+        {
+        "facebook":"Login with facebook",
+        "github":"sign in with github",
+        "google":"sign in with google",
         "OR":"OR",
         "Email":"Email",
         "Password":"Password",
         "Remember me":"Remember me",
-        "Forgot a password?":"Forgot a password?",
+        "password":"Forgot a password?",
         "SIGN IN":"SIGN IN"
     }
+    
 }
