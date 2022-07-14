@@ -45,8 +45,6 @@ const Benefits = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className={css.card_wrapper}>
           <div className={css.card_container}>
             <div className={css.left}>
               <img src="/images/benefits/history_img.png" alt="logo" className={css.img} />
@@ -78,8 +76,6 @@ const Benefits = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className={css.card_wrapper}>
           <div className={css.card_container}>
             <div className={css.left}>
               <img src="/images/benefits/teams_img.png" alt="logo" className={css.img} />
@@ -112,8 +108,6 @@ const Benefits = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className={css.card_wrapper}>
           <div className={css.card_container}>
             <div className={css.left}>
               <img src="/images/benefits/mobile_img.png" alt="logo" className={css.img} />
