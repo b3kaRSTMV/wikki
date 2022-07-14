@@ -11,7 +11,7 @@ function LoginPage() {
       <Header />
       <div className="container">
         <div className={css.login__forms}>
-          <h2>{t("sign in")}</h2>
+          <h2>{t("loginPage.SIGN_IN")}</h2>
           <div className={css.login__links}>
             <Link to="/sign_in" className={css.link__facebook}>
               <img src="./shared/img/facebook.svg" alt="" />
@@ -44,7 +44,7 @@ function LoginPage() {
                 <span className={css.login__text}>{t("loginPage.Remember_me")}</span>
               </div>
               <Link to="/password_renew" className={css.login__text}>
-                {t("loginPage.password?")}
+                {t("loginPage.forgot_psw")}
               </Link>
             </div>
             <div class={css.control}>

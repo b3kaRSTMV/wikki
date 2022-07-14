@@ -38,9 +38,9 @@
         "google":"sign in with google",
         "OR":"OR",
         "Email":"Email",
-        "Password":"Password",
+        "password":"Password",
         "Remember_me":"Remember me",
-        "password":"Forgot a password?",
+        "forgot_psw":"Forgot a password?",
         "SIGN_IN":"SIGN IN"
     }
     
