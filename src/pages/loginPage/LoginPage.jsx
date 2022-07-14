@@ -13,15 +13,15 @@ function LoginPage() {
         <div className={css.login__forms}>
           <h2>{t("sign in")}</h2>
           <div className={css.login__links}>
-            <Link to="/" className={css.link__facebook}>
+            <Link to="/sign_in" className={css.link__facebook}>
               <img src="./shared/img/facebook.svg" alt="" />
               <span>{t("loginPage.facebook")}</span>
             </Link>
-            <Link to="/" className={css.link__github}>
+            <Link to="/sign_in" className={css.link__github}>
               <img src="./shared/img/git.svg" alt="" />
               <span>{t("loginPage.github")}</span>
             </Link>
-            <Link to="/" className={css.link__google}>
+            <Link to="/sign_in" className={css.link__google}>
               <img src="./shared/img/google.svg" alt="" />
               <span>{t("loginPage.google")}</span>
             </Link>
@@ -31,11 +31,11 @@ function LoginPage() {
           </div>
           <form action="#">
             <div class={css.control}>
-              <label for="email">{t("loginPage.Email")}</label>
+              <label htmlFor="email">{t("loginPage.Email")}</label>
               <input type="email" name="email" className={css.control__input} />
             </div>
             <div class={css.control}>
-              <label for="psw">{t("loginPage.Password")}</label>
+              <label htmlFor="psw">{t("loginPage.Password")}</label>
               <input type="password" name="psw" className={css.control__input} />
             </div>
             <div class={css.login__submit}>
@@ -43,12 +43,12 @@ function LoginPage() {
                 <input type="checkbox" />
                 <span className={css.login__text}>{t("loginPage.Remember_me")}</span>
               </div>
-              <Link to="/" className={css.login__text}>
+              <Link to="/password_renew" className={css.login__text}>
                 {t("loginPage.password?")}
               </Link>
             </div>
             <div class={css.control}>
-              <Link to="" className={css.control__sign}>
+              <Link to="/log_in" className={css.control__sign}>
                 {t("loginPage.SIGN_IN")}
               </Link>
             </div>
