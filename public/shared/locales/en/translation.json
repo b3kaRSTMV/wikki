@@ -1,4 +1,19 @@
 {
+    "footer":{
+        "Products": "Products",
+        "Features": "Features",
+        "Pricing": "Pricing",
+        "Twitter": "Twitter",
+        "Facebook":"Facebook",
+        "Contact Us":"Contact Us",
+        "Privacy":"Privacy",
+        "Terms":"Terms",
+        "Social":"Social",
+        "Legal":"Legal",
+        "Created by awesome people":"Created by awesome people",
+        "at":"at",
+        "Oozou":"Oozou"
+    },
     "jumbotron": {
         "title": "Beautiful Wikis for Teams",
         "main_text": "Wikis don’t have to be ugly, complex and hard to manage. Welcome to the future of the Wiki.",
