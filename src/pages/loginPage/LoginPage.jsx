@@ -35,7 +35,7 @@ function LoginPage() {
               <input type="email" name="email" className={css.control__input} />
             </div>
             <div class={css.control}>
-              <label htmlFor="psw">{t("loginPage.Password")}</label>
+              <label htmlFor="psw">{t("loginPage.password")}</label>
               <input type="password" name="psw" className={css.control__input} />
             </div>
             <div class={css.login__submit}>
