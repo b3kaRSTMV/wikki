@@ -47,7 +47,7 @@ function LoginPage() {
                 {t("loginPage.forgot_psw")}
               </Link>
             </div>
-            <div class={css.control}>
+            <div className={css.control}>
               <Link to="/log_in" className={css.control__sign}>
                 {t("loginPage.SIGN_IN")}
               </Link>
