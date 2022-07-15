@@ -14,15 +14,15 @@ function LoginPage() {
           <h2>{t("loginPage.SIGN_IN")}</h2>
           <div className={css.login__links}>
             <Link to="/sign_in" className={css.link__facebook}>
-              <img src="./shared/img/facebook.svg" alt="" />
+              <img src="./shared/img/facebook.svg" alt="facebook" />
               <span>{t("loginPage.facebook")}</span>
             </Link>
             <Link to="/sign_in" className={css.link__github}>
-              <img src="./shared/img/git.svg" alt="" />
+              <img src="./shared/img/git.svg" alt="github" />
               <span>{t("loginPage.github")}</span>
             </Link>
             <Link to="/sign_in" className={css.link__google}>
-              <img src="./shared/img/google.svg" alt="" />
+              <img src="./shared/img/google.svg" alt="google" />
               <span>{t("loginPage.google")}</span>
             </Link>
           </div>
