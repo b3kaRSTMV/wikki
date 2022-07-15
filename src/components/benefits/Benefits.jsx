@@ -15,9 +15,9 @@ const Benefits = () => {
         </div>
         <div className={css.card_wrapper}>
           {benefitsList.map((element) => (
-            <div key={element.id} className={css.card_container}>
+            <div className={css.card_container} key={element.id}>
               <div className={css.left}>
-                <img src={"/images/benefits/" + element.img} alt="logo" className={css.img} />
+                <img className={css.img} src={"/images/benefits/" + element.img} alt="logo" />
               </div>
               <div className={css.right}>
                 <div className={css.title_container}>
