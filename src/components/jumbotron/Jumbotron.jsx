@@ -16,7 +16,7 @@ const Jumbotron = () => {
           <div className={css.img_container}>
             <img
               className={`${css.box} ${css.bounce_3}`}
-              src="/images/jumbotrons_img.png"
+              src="/images/jumbotron/jumbotrons_img.png"
               alt="image"
             />
           </div>
