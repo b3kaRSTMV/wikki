@@ -1,3 +1,4 @@
+import Benefits from "../components/benefits/Benefits";
 import Header from "../components/header/Header";
 import Jumbotron from "../components/jumbotron/Jumbotron";
 import Footer from "../components/footer/Footer";
@@ -6,6 +7,7 @@ export default function MainPage() {
     <>
       <Header />
       <Jumbotron />
+      <Benefits />
       <Footer />
     </>
   );

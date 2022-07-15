@@ -13,7 +13,7 @@ export default function Header() {
         <div className={css.header}>
           <div className={css.header_body}>
             <Link to="/" className={css.logo}>
-              <img src="/images/logo.png" alt="Logo" />
+              <img src="/images/header/logo.png" alt="Logo" />
             </Link>
             <div className={css.burger_border}>
               <div className={css.header_burger} onClick={() => setActive(!active)}>
