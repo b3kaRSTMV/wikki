@@ -1,5 +1,6 @@
 {
-    "footer":{
+    "footer":
+        {
         "Products": "Products",
         "Features": "Features",
         "Pricing": "Pricing",
@@ -10,7 +11,7 @@
         "Terms":"Terms",
         "Social":"Social",
         "Legal":"Legal",
-        "Created by awesome people":"Created by awesome people",
+        "footer_text":"Created by awesome people",
         "at":"at",
         "Oozou":"Oozou"
     },
@@ -44,4 +45,19 @@
         "eighth_title": "PROFESSIONALLY DESIGNED TEMPLATES",
         "eighth_text": "Coming soon - Choose a layout that matches the culture and style of your team"
     }
+    ,
+    "loginPage":
+    
+        {
+        "facebook":"Login with facebook",
+        "github":"sign in with github",
+        "google":"sign in with google",
+        "OR":"OR",
+        "Email":"Email",
+        "password":"Password",
+        "Remember_me":"Remember me",
+        "forgot_psw":"Forgot a password?",
+        "SIGN_IN":"SIGN IN"
+    }
+    
 }
