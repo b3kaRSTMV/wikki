@@ -28,13 +28,25 @@ const Register = () => {
             <div className={css.dividing_div}>OR</div>
             <div className={css.second_hr}></div>
           </div>
-          <div className={css.input_block}>
-            <input className={css.input} type="text" placeholder="Company Name" />
-            <input className={css.input} type="text" placeholder="Your Name" />
-            <input className={css.input} type="text" placeholder="Email Address" />
-            <input className={css.input} type="text" placeholder="Choose Password" />
+          <form className={css.input_block}>
+            <div className={css.input_wrapper}>
+              <img className={css.input_icon} src="/images/register/Name.png" alt="logo" />
+              <input className={css.input} type="text" placeholder="Company Name" />
+            </div>
+            <div className={css.input_wrapper}>
+              <img className={css.input_icon} src="/images/register/yourName.png" alt="logo" />
+              <input className={css.input} type="text" placeholder="Your Name" />
+            </div>
+            <div className={css.input_wrapper}>
+              <img className={css.input_icon} src="/images/register/email.png" alt="logo" />
+              <input className={css.input} type="text" placeholder="Email Address" />
+            </div>
+            <div className={css.input_wrapper}>
+              <img className={css.input_icon} src="/images/register/password.png" alt="logo" />
+              <input className={css.input} type="text" placeholder="Choose Password" />
+            </div>
             <button className={css.btn}>GET STARTED-FREE FOREVER</button>
-          </div>
+          </form>
           <p className={css.footer_text}>
             By clicking "Get Started - Free Forever!" I agree to SlimWiki's Terms of Service and
             Privacy Policy.
