@@ -1,4 +1,20 @@
 {
+    "footer":
+        {
+        "Products": "Products",
+        "Features": "Features",
+        "Pricing": "Pricing",
+        "Twitter": "Twitter",
+        "Facebook":"Facebook",
+        "Contact Us":"Contact Us",
+        "Privacy":"Privacy",
+        "Terms":"Terms",
+        "Social":"Social",
+        "Legal":"Legal",
+        "footer_text":"Created by awesome people",
+        "at":"at",
+        "Oozou":"Oozou"
+    },
     "jumbotron": {
         "title": "Beautiful Wikis for Teams",
         "main_text": "Wikis don’t have to be ugly, complex and hard to manage. Welcome to the future of the Wiki.",
@@ -43,4 +59,19 @@
         "btn_text": "GET STARTED-FREE FOREVER",
         "footer_text": "By clicking 'Get Started - Free Forever!' I agree to SlimWiki's Terms of Service and Privacy Policy."
     }
+    ,
+    "loginPage":
+    
+        {
+        "facebook":"Login with facebook",
+        "github":"sign in with github",
+        "google":"sign in with google",
+        "OR":"OR",
+        "Email":"Email",
+        "password":"Password",
+        "Remember_me":"Remember me",
+        "forgot_psw":"Forgot a password?",
+        "SIGN_IN":"SIGN IN"
+    }
+    
 }
