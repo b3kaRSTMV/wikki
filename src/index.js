@@ -6,7 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import "./i18next";
-import "./firebase/firebae-config";
+import "./firebase/firebase-config";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
