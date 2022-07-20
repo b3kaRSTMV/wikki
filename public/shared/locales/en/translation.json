@@ -44,6 +44,20 @@
         "seventh_text": "SlimWiki looks stunning on desktop, tablet or phone. Our fully responsive design adjusts perfectly to fit all your devices",
         "eighth_title": "PROFESSIONALLY DESIGNED TEMPLATES",
         "eighth_text": "Coming soon - Choose a layout that matches the culture and style of your team"
+    },
+    "register": {
+        "main_title": "Get Started for Free!",
+        "main_text": "Sign up and create your wiki instantly using...",
+        "facebook": "FACEBOOK",
+        "github": "GITHUB",
+        "google": "GOOGLE",
+        "or": "OR",
+        "company_name": "Company Name",
+        "your_name": "Your Name",
+        "email_address": "Email Address",
+        "password": "Choose Password",
+        "btn_text": "GET STARTED-FREE FOREVER",
+        "footer_text": "By clicking 'Get Started - Free Forever!' I agree to SlimWiki's Terms of Service and Privacy Policy."
     }
     ,
     "loginPage":
