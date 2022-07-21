@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import css from "./LoginPage.module.scss";
 import { useTranslation } from "react-i18next";
 import "../../i18next";
-import Header from "../../components/header/Header";
 
 function LoginPage() {
   const { t } = useTranslation();
+
   return (
     <>
       <Header />
@@ -48,7 +48,7 @@ function LoginPage() {
               </Link>
             </div>
             <div className={css.control}>
-              <Link to="/log_in" className={css.control__sign}>
+              <Link to="/login" className={css.control__sign}>
                 {t("loginPage.SIGN_IN")}
               </Link>
             </div>

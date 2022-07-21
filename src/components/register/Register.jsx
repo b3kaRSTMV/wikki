@@ -1,9 +1,34 @@
 import css from "./Register.module.scss";
 import { useTranslation } from "react-i18next";
 import "../../i18next";
+import { useState } from "react";
+import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { useDispatch } from "react-redux/es/exports";
+import { setUser } from "../../reduxToolkit/slices/userSlice";
 
 const Register = () => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [name, setName] = useState("");
+  const auth = getAuth();
+  const handleSignUp = (e) => {
+    createUserWithEmailAndPassword(auth, email, pass, companyName, name)
+      .then(({ user }) => {
+        console.log(user);
+        dispatch(
+          setUser({
+            email: user.email,
+            id: user.uid,
+            token: user.accessToken
+          })
+        );
+      })
+      .catch(console.error);
+    e.preventDefault();
+  };
   return (
     <div className={css.wrapper}>
       <div className="container">
@@ -31,22 +56,38 @@ const Register = () => {
             <div className={css.dividing_div}>{t("register.or")}</div>
             <div className={css.second_hr}></div>
           </div>
-          <form className={css.input_block}>
+          <form onSubmit={handleSignUp} className={css.input_block}>
             <div className={css.input_wrapper}>
               <img
+                onChange={(e) => setName(e.target.value)}
                 className={css.input_icon}
                 src="/images/register/Name.png"
                 alt="Company name icon"
               />
-              <input className={css.input} type="text" placeholder={t("register.company_name")} />
+              <input
+                className={css.input}
+                onChange={(e) => setCompanyName(e.target.value)}
+                type="text"
+                placeholder={t("register.company_name")}
+              />
             </div>
             <div className={css.input_wrapper}>
               <img className={css.input_icon} src="/images/register/yourName.png" alt="Name icon" />
-              <input className={css.input} type="text" placeholder={t("register.your_name")} />
+              <input
+                className={css.input}
+                // onChange={(e) => setName(e.target.value)}
+                type="text"
+                placeholder={t("register.your_name")}
+              />
             </div>
             <div className={css.input_wrapper}>
               <img className={css.input_icon} src="/images/register/email.png" alt="Email icon" />
-              <input className={css.input} type="text" placeholder={t("register.email_address")} />
+              <input
+                className={css.input}
+                onChange={(e) => setEmail(e.target.value)}
+                type="text"
+                placeholder={t("register.email_address")}
+              />
             </div>
             <div className={css.input_wrapper}>
               <img
@@ -54,7 +95,12 @@ const Register = () => {
                 src="/images/register/password.png"
                 alt="Password icon"
               />
-              <input className={css.input} type="password" placeholder={t("register.password")} />
+              <input
+                className={css.input}
+                onChange={(e) => setPass(e.target.value)}
+                type="password"
+                placeholder={t("register.password")}
+              />
             </div>
             <button className={css.btn}>{t("register.btn_text")}</button>
           </form>
