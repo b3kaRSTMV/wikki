@@ -10,11 +10,8 @@ import {
   signInWithPopup,
   GithubAuthProvider
 } from "firebase/auth";
-// import { firestore } from "firebase/firestore";
 import { useDispatch } from "react-redux/es/exports";
 import { setUser } from "../../reduxToolkit/slices/userSlice";
-import { useAuth } from "../../hooks/useAuth";
-import { Navigate } from "react-router-dom";
 
 const Register = () => {
   const { t } = useTranslation();
@@ -23,38 +20,11 @@ const Register = () => {
   const [pass, setPass] = useState("");
   const [companyName, setCompanyName] = useState("");
   const [name, setName] = useState("");
+  const [error, setError] = useState("");
   const auth = getAuth();
-  const { isAuth } = useAuth();
   const handleSignUp = (e) => {
     createUserWithEmailAndPassword(auth, email, pass, companyName, name)
       .then(({ user }) => {
-        console.log(user);
-        dispatch(
-          setUser({
-            email: user.email,
-            id: user.uid,
-            token: user.accessToken
-          })
-        );
-        setTimeout(redirect, 10000);
-      })
-      .catch(console.error);
-    e.preventDefault();
-  };
-
-  function redirect() {
-    if (isAuth === true) {
-      <Navigate to="/login" />;
-    } else {
-      alert("тебе нужно зарегистрироваться");
-    }
-  }
-
-  const googleLogin = async () => {
-    const provider = new GoogleAuthProvider();
-    await signInWithPopup(auth, provider)
-      .then(({ user }) => {
-        console.log(user);
         dispatch(
           setUser({
             email: user.email,
@@ -64,7 +34,29 @@ const Register = () => {
         );
       })
       .catch((error) => {
-        console.log(error);
+        setEmail("");
+        setPass("");
+        setError(error.message);
+      });
+    e.preventDefault();
+  };
+
+  const googleLogin = async () => {
+    const provider = new GoogleAuthProvider();
+    await signInWithPopup(auth, provider)
+      .then(({ user }) => {
+        dispatch(
+          setUser({
+            email: user.email,
+            id: user.uid,
+            token: user.accessToken
+          })
+        );
+      })
+      .catch((error) => {
+        setEmail("");
+        setPass("");
+        setError(error.message);
       });
   };
 
@@ -72,7 +64,6 @@ const Register = () => {
     const provider = new FacebookAuthProvider();
     await signInWithPopup(auth, provider)
       .then(({ user }) => {
-        console.log(user);
         dispatch(
           setUser({
             email: user.email,
@@ -82,7 +73,9 @@ const Register = () => {
         );
       })
       .catch((error) => {
-        console.log(error);
+        setEmail("");
+        setPass("");
+        setError(error.message);
       });
   };
 
@@ -90,10 +83,18 @@ const Register = () => {
     const provider = new GithubAuthProvider();
     await signInWithPopup(auth, provider)
       .then(({ user }) => {
-        console.log(user);
+        dispatch(
+          setUser({
+            email: user.email,
+            id: user.uid,
+            token: user.accessToken
+          })
+        );
       })
       .catch((error) => {
-        console.log(error);
+        setEmail("");
+        setPass("");
+        setError(error.message);
       });
   };
   return (
@@ -142,7 +143,7 @@ const Register = () => {
               <img className={css.input_icon} src="/images/register/yourName.png" alt="Name icon" />
               <input
                 className={css.input}
-                // onChange={(e) => setName(e.target.value)}
+                onChange={(e) => setName(e.target.value)}
                 type="text"
                 placeholder={t("register.your_name")}
               />
@@ -169,6 +170,7 @@ const Register = () => {
                 placeholder={t("register.password")}
               />
             </div>
+            {error && <p className={css.error}>{error}</p>}
             <button className={css.btn}>{t("register.btn_text")}</button>
           </form>
           <p className={css.footer_text}>{t("register.footer_text")}</p>
