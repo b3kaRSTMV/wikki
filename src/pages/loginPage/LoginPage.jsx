@@ -2,10 +2,37 @@ import { Link } from "react-router-dom";
 import css from "./LoginPage.module.scss";
 import { useTranslation } from "react-i18next";
 import "../../i18next";
+import Header from "../../components/header/Header";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { setUser } from "../../reduxToolkit/slices/userSlice";
 
 function LoginPage() {
   const { t } = useTranslation();
-
+  const dispatch = useDispatch();
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
+  const auth = getAuth();
+  const [error, setError] = useState("");
+  const handleLogin = (e) => {
+    signInWithEmailAndPassword(auth, email, pass)
+      .then(({ user }) => {
+        dispatch(
+          setUser({
+            email: user.email,
+            id: user.uid,
+            token: user.accessToken
+          })
+        );
+      })
+      .catch((error) => {
+        setEmail("");
+        setPass("");
+        setError(error.message);
+      });
+    e.preventDefault();
+  };
   return (
     <>
       <Header />
@@ -29,16 +56,27 @@ function LoginPage() {
           <div className={css.line}>
             <span>{t("loginPage.OR")}</span>
           </div>
-          <form action="#">
-            <div class={css.control}>
+          <form onSubmit={handleLogin} action="#">
+            <div className={css.control}>
               <label htmlFor="email">{t("loginPage.Email")}</label>
-              <input type="email" name="email" className={css.control__input} />
+              <input
+                type="email"
+                name="email"
+                onChange={(e) => setEmail(e.target.value)}
+                className={css.control__input}
+              />
             </div>
-            <div class={css.control}>
+            <div className={css.control}>
               <label htmlFor="psw">{t("loginPage.password")}</label>
-              <input type="password" name="psw" className={css.control__input} />
+              <input
+                type="password"
+                name="psw"
+                onChange={(e) => setPass(e.target.value)}
+                className={css.control__input}
+              />
             </div>
-            <div class={css.login__submit}>
+            {error && <p className={css.error}>{error}</p>}
+            <div className={css.login__submit}>
               <div>
                 <input type="checkbox" />
                 <span className={css.login__text}>{t("loginPage.Remember_me")}</span>
