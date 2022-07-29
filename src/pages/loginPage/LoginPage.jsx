@@ -5,7 +5,6 @@ import "../../i18next";
 
 function LoginPage() {
   const { t } = useTranslation();
-
   return (
     <>
       <Header />

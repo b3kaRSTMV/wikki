@@ -2,14 +2,7 @@ import css from "./Register.module.scss";
 import { useTranslation } from "react-i18next";
 import "../../i18next";
 import { useState } from "react";
-import {
-  createUserWithEmailAndPassword,
-  getAuth,
-  GoogleAuthProvider,
-  FacebookAuthProvider,
-  signInWithPopup,
-  GithubAuthProvider
-} from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { useDispatch } from "react-redux/es/exports";
 import { setUser } from "../../reduxToolkit/slices/userSlice";
 
@@ -23,65 +16,8 @@ const Register = () => {
   const [error, setError] = useState("");
   const auth = getAuth();
   const handleSignUp = (e) => {
-    createUserWithEmailAndPassword(auth, email, pass, companyName, name)
-      .then(({ user }) => {
-        dispatch(
-          setUser({
-            email: user.email,
-            id: user.uid,
-            token: user.accessToken
-          })
-        );
-      })
-      .catch((error) => {
-        setEmail("");
-        setPass("");
-        setError(error.message);
-      });
     e.preventDefault();
-  };
-
-  const googleLogin = async () => {
-    const provider = new GoogleAuthProvider();
-    await signInWithPopup(auth, provider)
-      .then(({ user }) => {
-        dispatch(
-          setUser({
-            email: user.email,
-            id: user.uid,
-            token: user.accessToken
-          })
-        );
-      })
-      .catch((error) => {
-        setEmail("");
-        setPass("");
-        setError(error.message);
-      });
-  };
-
-  const facebookLogin = async () => {
-    const provider = new FacebookAuthProvider();
-    await signInWithPopup(auth, provider)
-      .then(({ user }) => {
-        dispatch(
-          setUser({
-            email: user.email,
-            id: user.uid,
-            token: user.accessToken
-          })
-        );
-      })
-      .catch((error) => {
-        setEmail("");
-        setPass("");
-        setError(error.message);
-      });
-  };
-
-  const githubLogin = async () => {
-    const provider = new GithubAuthProvider();
-    await signInWithPopup(auth, provider)
+    createUserWithEmailAndPassword(auth, email, pass, companyName, name)
       .then(({ user }) => {
         dispatch(
           setUser({
@@ -106,15 +42,15 @@ const Register = () => {
             <p className={css.main_text}>{t("register.main_text")}</p>
           </div>
           <div className={css.social_networks_container}>
-            <div className={css.facebook} onClick={facebookLogin}>
+            <div className={css.facebook}>
               <img className={css.icon} src="/images/register/facebook.png" alt="logo" />
               <h3 className={css.social_networks_text}>{t("register.facebook")}</h3>
             </div>
-            <div className={css.github} onClick={githubLogin}>
+            <div className={css.github}>
               <img className={css.icon} src="/images/register/github.png" alt="logo" />
               <h3 className={css.social_networks_text}>{t("register.github")}</h3>
             </div>
-            <div className={css.google} onClick={googleLogin}>
+            <div className={css.google}>
               <img className={css.icon} src="/images/register/google.png" alt="logo" />
               <h3 className={css.social_networks_text}>{t("register.google")}</h3>
             </div>
