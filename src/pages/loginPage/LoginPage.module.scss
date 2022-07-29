@@ -3,6 +3,10 @@
     align-items: center;
     flex-direction: column;
 
+    .error{
+        color:red;
+    }
+
     h2{
         color: #2f2f2f;
         font-size: 40px;
