@@ -30,15 +30,15 @@ function LoginPage() {
             <span>{t("loginPage.OR")}</span>
           </div>
           <form action="#">
-            <div class={css.control}>
+            <div className={css.control}>
               <label htmlFor="email">{t("loginPage.Email")}</label>
               <input type="email" name="email" className={css.control__input} />
             </div>
-            <div class={css.control}>
+            <div className={css.control}>
               <label htmlFor="psw">{t("loginPage.password")}</label>
               <input type="password" name="psw" className={css.control__input} />
             </div>
-            <div class={css.login__submit}>
+            <div className={css.login__submit}>
               <div>
                 <input type="checkbox" />
                 <span className={css.login__text}>{t("loginPage.Remember_me")}</span>
