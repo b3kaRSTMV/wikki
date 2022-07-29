@@ -73,5 +73,11 @@
         "forgot_psw":"Forgot a password?",
         "SIGN_IN":"SIGN IN"
     }
-    
+    ,
+    "forgotpassword":
+
+    {
+        "FORGOT_PASSWORD":"FORGOT PASSWORD?",
+        "RESET_PASSWORD":"RESET PASSWORD"
+    }
 }
