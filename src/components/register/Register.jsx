@@ -1,17 +1,11 @@
 import css from "./Register.module.scss";
 import { useTranslation } from "react-i18next";
 import "../../i18next";
-import { useState } from "react";
-import {
-  createUserWithEmailAndPassword,
-  getAuth,
-  GoogleAuthProvider,
-  FacebookAuthProvider,
-  signInWithPopup,
-  GithubAuthProvider
-} from "firebase/auth";
+import { useState, useEffect } from "react";
+import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { useDispatch } from "react-redux/es/exports";
 import { setUser } from "../../reduxToolkit/slices/userSlice";
+import { db } from "../../firebase/firebase-config";
 
 const Register = () => {
   const { t } = useTranslation();
@@ -21,81 +15,43 @@ const Register = () => {
   const [companyName, setCompanyName] = useState("");
   const [name, setName] = useState("");
   const [error, setError] = useState("");
+  const [users, setUsers] = useState([]);
   const auth = getAuth();
+
+  useEffect(() => {
+    db.collection("users")
+      .get()
+      .then((snapshot) => {
+        const usersArr = [];
+        snapshot.forEach((doc) => {
+          usersArr.push({ ...doc.data(), id: doc.id });
+        });
+        setUsers(usersArr);
+      });
+  }, []);
   const handleSignUp = (e) => {
-    createUserWithEmailAndPassword(auth, email, pass, companyName, name)
-      .then(({ user }) => {
-        dispatch(
-          setUser({
-            email: user.email,
-            id: user.uid,
-            token: user.accessToken
-          })
-        );
-      })
-      .catch((error) => {
-        setEmail("");
-        setPass("");
-        setError(error.message);
-      });
     e.preventDefault();
-  };
-
-  const googleLogin = async () => {
-    const provider = new GoogleAuthProvider();
-    await signInWithPopup(auth, provider)
-      .then(({ user }) => {
-        dispatch(
-          setUser({
-            email: user.email,
-            id: user.uid,
-            token: user.accessToken
-          })
-        );
-      })
-      .catch((error) => {
-        setEmail("");
-        setPass("");
-        setError(error.message);
-      });
-  };
-
-  const facebookLogin = async () => {
-    const provider = new FacebookAuthProvider();
-    await signInWithPopup(auth, provider)
-      .then(({ user }) => {
-        dispatch(
-          setUser({
-            email: user.email,
-            id: user.uid,
-            token: user.accessToken
-          })
-        );
-      })
-      .catch((error) => {
-        setEmail("");
-        setPass("");
-        setError(error.message);
-      });
-  };
-
-  const githubLogin = async () => {
-    const provider = new GithubAuthProvider();
-    await signInWithPopup(auth, provider)
-      .then(({ user }) => {
-        dispatch(
-          setUser({
-            email: user.email,
-            id: user.uid,
-            token: user.accessToken
-          })
-        );
-      })
-      .catch((error) => {
-        setEmail("");
-        setPass("");
-        setError(error.message);
-      });
+    const data = {
+      companyName: companyName,
+      name: name
+    };
+    const userFind = users.some((user) => user.companyName === companyName);
+    if (userFind) {
+      setError("has already been taken");
+    } else {
+      createUserWithEmailAndPassword(auth, email, pass)
+        .then(({ user }) => {
+          db.collection("users")
+            .doc()
+            .set({ ...data, userId: user.uid });
+          dispatch(setUser({ id: user.uid, name: user.displayName, email: email }));
+        })
+        .catch((error) => {
+          setEmail("");
+          setPass("");
+          setError(error.message);
+        });
+    }
   };
   return (
     <div className={css.wrapper}>
@@ -106,15 +62,15 @@ const Register = () => {
             <p className={css.main_text}>{t("register.main_text")}</p>
           </div>
           <div className={css.social_networks_container}>
-            <div className={css.facebook} onClick={facebookLogin}>
+            <div className={css.facebook}>
               <img className={css.icon} src="/images/register/facebook.png" alt="logo" />
               <h3 className={css.social_networks_text}>{t("register.facebook")}</h3>
             </div>
-            <div className={css.github} onClick={githubLogin}>
+            <div className={css.github}>
               <img className={css.icon} src="/images/register/github.png" alt="logo" />
               <h3 className={css.social_networks_text}>{t("register.github")}</h3>
             </div>
-            <div className={css.google} onClick={googleLogin}>
+            <div className={css.google}>
               <img className={css.icon} src="/images/register/google.png" alt="logo" />
               <h3 className={css.social_networks_text}>{t("register.google")}</h3>
             </div>
