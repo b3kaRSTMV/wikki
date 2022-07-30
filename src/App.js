@@ -1,13 +1,19 @@
-import { useSelector, useDispatch } from "react-redux";
-import { test } from "./reduxToolkit/toolkitReducer";
+import { Routes, Route } from "react-router-dom";
+import MainPage from "./pages/MainPage";
+import LoginPage from "./pages/loginPage/LoginPage";
+import "./App.css";
+import "./style/index.scss";
+import PasswordRenew from "./pages/PasswordRenew/PasswordRenew";
+
 function App() {
-  const testShowCount = useSelector((state) => state.toolkit.count);
-  const dispatch = useDispatch();
   return (
-    <div>
-      <div>{testShowCount}</div>
-      <button onClick={() => dispatch(test())}>click here</button>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<MainPage />}></Route>
+        <Route path="/login" element={<LoginPage />}></Route>
+        <Route path="/password_renew" element={<PasswordRenew />}></Route>
+      </Routes>
+    </>
   );
 }
 
