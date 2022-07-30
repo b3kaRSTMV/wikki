@@ -1,11 +1,28 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import css from "./LoginPage.module.scss";
 import { useTranslation } from "react-i18next";
 import "../../i18next";
 import Header from "../../components/header/Header";
+import { useState } from "react";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 function LoginPage() {
   const { t } = useTranslation();
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
+  const [error, setError] = useState();
+  const auth = getAuth();
+  const navigate = useNavigate();
+  const handleLogin = (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(auth, email, pass)
+      .then(() => {
+        navigate("/");
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
+  };
   return (
     <>
       <Header />
@@ -29,15 +46,26 @@ function LoginPage() {
           <div className={css.line}>
             <span>{t("loginPage.OR")}</span>
           </div>
-          <form action="#">
+          <form onSubmit={handleLogin} action="#">
             <div className={css.control}>
               <label htmlFor="email">{t("loginPage.Email")}</label>
-              <input type="email" name="email" className={css.control__input} />
+              <input
+                type="email"
+                name="email"
+                onChange={(e) => setEmail(e.target.value)}
+                className={css.control__input}
+              />
             </div>
             <div className={css.control}>
               <label htmlFor="psw">{t("loginPage.password")}</label>
-              <input type="password" name="psw" className={css.control__input} />
+              <input
+                type="password"
+                name="psw"
+                onChange={(e) => setPass(e.target.value)}
+                className={css.control__input}
+              />
             </div>
+            {error && <p className={css.error}>{error}</p>}
             <div className={css.login__submit}>
               <div>
                 <input type="checkbox" />
@@ -48,9 +76,7 @@ function LoginPage() {
               </Link>
             </div>
             <div className={css.control}>
-              <Link to="/log_in" className={css.control__sign}>
-                {t("loginPage.SIGN_IN")}
-              </Link>
+              <button className={css.control__sign}>{t("loginPage.SIGN_IN")}</button>
             </div>
           </form>
         </div>

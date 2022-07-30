@@ -33,7 +33,7 @@ export default function Header() {
                   </a>
                 </li>
                 <li>
-                  <Link to="/" className={css.header_link_with_background}>
+                  <Link to="/login" className={css.header_link_with_background}>
                     {t("header.SignIn")}
                   </Link>
                 </li>
