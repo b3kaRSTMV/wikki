@@ -1,6 +1,58 @@
 import css from "./Register.module.scss";
 import { useTranslation } from "react-i18next";
 import "../../i18next";
+import { useState, useEffect } from "react";
+import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { useDispatch } from "react-redux/es/exports";
+import { setUser } from "../../reduxToolkit/slices/userSlice";
+import { db } from "../../firebase/firebase-config";
+
+const Register = () => {
+  const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [name, setName] = useState("");
+  const [error, setError] = useState("");
+  const [users, setUsers] = useState([]);
+  const auth = getAuth();
+
+  useEffect(() => {
+    db.collection("users")
+      .get()
+      .then((snapshot) => {
+        const usersArr = [];
+        snapshot.forEach((doc) => {
+          usersArr.push({ ...doc.data(), id: doc.id });
+        });
+        setUsers(usersArr);
+      });
+  }, []);
+  const handleSignUp = (e) => {
+    e.preventDefault();
+    const data = {
+      companyName: companyName,
+      name: name
+    };
+    const userFind = users.some((user) => user.companyName === companyName);
+    if (userFind) {
+      setError("has already been taken");
+    } else {
+      createUserWithEmailAndPassword(auth, email, pass)
+        .then(({ user }) => {
+          db.collection("users")
+            .doc()
+            .set({ ...data, userId: user.uid });
+          dispatch(setUser({ id: user.uid, name: user.displayName, email: email }));
+        })
+        .catch((error) => {
+          setEmail("");
+          setPass("");
+          setError(error.message);
+        });
+    }
+  };
 
 const Register = () => {
   const { t } = useTranslation();
