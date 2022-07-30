@@ -53,6 +53,9 @@ const Register = () => {
         });
     }
   };
+
+const Register = () => {
+  const { t } = useTranslation();
   return (
     <div className={css.wrapper}>
       <div className="container">
@@ -80,38 +83,22 @@ const Register = () => {
             <div className={css.dividing_div}>{t("register.or")}</div>
             <div className={css.second_hr}></div>
           </div>
-          <form onSubmit={handleSignUp} className={css.input_block}>
+          <form className={css.input_block}>
             <div className={css.input_wrapper}>
               <img
-                onChange={(e) => setName(e.target.value)}
                 className={css.input_icon}
                 src="/images/register/Name.png"
                 alt="Company name icon"
               />
-              <input
-                className={css.input}
-                onChange={(e) => setCompanyName(e.target.value)}
-                type="text"
-                placeholder={t("register.company_name")}
-              />
+              <input className={css.input} type="text" placeholder={t("register.company_name")} />
             </div>
             <div className={css.input_wrapper}>
               <img className={css.input_icon} src="/images/register/yourName.png" alt="Name icon" />
-              <input
-                className={css.input}
-                onChange={(e) => setName(e.target.value)}
-                type="text"
-                placeholder={t("register.your_name")}
-              />
+              <input className={css.input} type="text" placeholder={t("register.your_name")} />
             </div>
             <div className={css.input_wrapper}>
               <img className={css.input_icon} src="/images/register/email.png" alt="Email icon" />
-              <input
-                className={css.input}
-                onChange={(e) => setEmail(e.target.value)}
-                type="text"
-                placeholder={t("register.email_address")}
-              />
+              <input className={css.input} type="text" placeholder={t("register.email_address")} />
             </div>
             <div className={css.input_wrapper}>
               <img
@@ -119,14 +106,8 @@ const Register = () => {
                 src="/images/register/password.png"
                 alt="Password icon"
               />
-              <input
-                className={css.input}
-                onChange={(e) => setPass(e.target.value)}
-                type="password"
-                placeholder={t("register.password")}
-              />
+              <input className={css.input} type="password" placeholder={t("register.password")} />
             </div>
-            {error && <p className={css.error}>{error}</p>}
             <button className={css.btn}>{t("register.btn_text")}</button>
           </form>
           <p className={css.footer_text}>{t("register.footer_text")}</p>
